@@ -4,13 +4,8 @@ import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
-@Table(name = "CarriageType")
-public class CarriageType {
-    @Id
-    @Column(name = "id", nullable = false)
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
-
+@Table(name = "Carriage")
+public class Carriage extends BaseEntity {
     @Column(name = "capacity", nullable = false)
     private int capacity;
 
@@ -18,17 +13,9 @@ public class CarriageType {
     private String type;
 
     @Column(name = "price", nullable = false)
-    private BigDecimal priceForCarriageType;
+    private BigDecimal priceForCarriage;
 
-    public CarriageType() {}
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
+    public Carriage() {}
 
     public int getCapacity() {
         return capacity;
@@ -47,10 +34,10 @@ public class CarriageType {
     }
 
     public BigDecimal getPriceForCarriageType() {
-        return priceForCarriageType;
+        return priceForCarriage;
     }
 
-    public void setPriceForCarriageType(BigDecimal priceForCarriageType) {
-        this.priceForCarriageType = priceForCarriageType;
+    public void setPriceForCarriage(BigDecimal priceForCarriage) {
+        this.priceForCarriage = priceForCarriage;
     }
 }
