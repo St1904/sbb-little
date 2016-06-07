@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7fbf61ae-ae6c-42a6-be74-5ecfa38bf43d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/core/dao/api/JpaGenericDAO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/core/dao/api/StationDAO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/core/dao/jpa/JpaStationDAO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/core/util/ApplicationContext.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="sbb-little.iws" />
@@ -901,11 +897,18 @@
       <option name="project" value="LOCAL" />
       <updated>1465317509266</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="JpaGenericDao + first DAO">
+      <created>1465324396455</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1465324396455</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9566000" />
+    <option name="totallyTimeSpent" value="9608000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1001,7 +1004,8 @@
     <MESSAGE value="entities again 1" />
     <MESSAGE value="entities again 2" />
     <MESSAGE value="generic dao" />
-    <option name="LAST_COMMIT_MESSAGE" value="generic dao" />
+    <MESSAGE value="JpaGenericDao + first DAO" />
+    <option name="LAST_COMMIT_MESSAGE" value="JpaGenericDao + first DAO" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
