@@ -13,10 +13,42 @@ public class Waypoint extends BaseEntity {
     private int stayCount;
 
     @ManyToMany
-    @JoinColumn(name = "route_id")
+    @JoinColumn(name = "route_id", nullable = false)
     private Route routeForWaypoint;
 
     @ManyToMany
-    @JoinColumn(name = "station_id")
+    @JoinColumn(name = "station_id", nullable = false)
     private Station station;
+
+    public int getArrival() {
+        return arrival;
+    }
+
+    public void setArrival(int arrival) {
+        this.arrival = arrival;
+    }
+
+    public int getStayCount() {
+        return stayCount;
+    }
+
+    public void setStayCount(int stayCount) {
+        this.stayCount = stayCount;
+    }
+
+    public Route getRouteForWaypoint() {
+        return routeForWaypoint;
+    }
+
+    public void setRouteForWaypoint(Route routeForWaypoint) {
+        this.routeForWaypoint = routeForWaypoint;
+    }
+
+    public Station getStation() {
+        return station;
+    }
+
+    public void setStation(Station station) {
+        this.station = station;
+    }
 }

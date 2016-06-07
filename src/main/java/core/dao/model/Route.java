@@ -13,7 +13,7 @@ public class Route extends BaseEntity {
     @Column(name = "name", nullable = false, length = 45)
     private String name;
 
-    @Column(name = "price_per_min", nullable = false)
+    @Column(name = "price_per_min", nullable = false, unique = true)
     private BigDecimal pricePerMinute;
 
     @OneToMany(mappedBy = "routeForWaypoint")
