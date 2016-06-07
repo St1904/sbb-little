@@ -1,9 +1,7 @@
 package core.dao.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
-import javax.persistence.UniqueConstraint;
+import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "Station", uniqueConstraints = @UniqueConstraint(columnNames = {"name", "suffix"}))
@@ -13,6 +11,9 @@ public class Station extends BaseEntity {
 
     @Column(name = "suffix", nullable = false, length = 45)
     private String suffix;
+
+    @OneToMany(mappedBy = "station")
+    private Set<Waypoint> waypoints;
 
     public String getName() {
         return name;
