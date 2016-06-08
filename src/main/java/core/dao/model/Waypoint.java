@@ -12,11 +12,11 @@ public class Waypoint extends BaseEntity {
     @Column(name = "stay_count", nullable = false)
     private int stayCount;
 
-    @ManyToMany
+    @ManyToOne
     @JoinColumn(name = "route_id", nullable = false)
     private Route routeForWaypoint;
 
-    @ManyToMany
+    @ManyToOne
     @JoinColumn(name = "station_id", nullable = false)
     private Station station;
 

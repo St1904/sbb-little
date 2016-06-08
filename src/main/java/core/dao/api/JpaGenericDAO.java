@@ -8,8 +8,9 @@ public abstract class JpaGenericDAO<T extends BaseEntity> implements GenericDAO<
     private EntityManager entityManager;
     private Class<T> clazz;
 
-    public JpaGenericDAO (EntityManager entityManager) {
+    public JpaGenericDAO (EntityManager entityManager, Class<T> clazz) {
         this.entityManager = entityManager;
+        this.clazz = clazz;
     }
 
     public long create(T entity) {

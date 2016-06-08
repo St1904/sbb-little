@@ -16,10 +16,10 @@ public class Train extends BaseEntity {
     private int seats;
 
     @OneToMany(mappedBy = "trainForRoute")
-    private Set<Route> routes;
+    private Set<TrainRoute> TrainRoutes;
 
     @OneToMany(mappedBy = "trainForCarriage")
-    private Set<Carriage> carriages;
+    private Set<TrainCarriage> TrainCarriages;
 
     public String getName() {
         return name;
@@ -37,19 +37,19 @@ public class Train extends BaseEntity {
         this.seats = seats;
     }
 
-    public Set<Route> getRoutes() {
-        return routes;
+    public Set<TrainRoute> getTrainRoutes() {
+        return TrainRoutes;
     }
 
-    public void setRoutes(Set<Route> routes) {
-        this.routes = routes;
+    public void setTrainRoutes(Set<TrainRoute> trainRoutes) {
+        TrainRoutes = trainRoutes;
     }
 
-    public Set<Carriage> getCarriages() {
-        return carriages;
+    public Set<TrainCarriage> getTrainCarriages() {
+        return TrainCarriages;
     }
 
-    public void setCarriages(Set<Carriage> carriages) {
-        this.carriages = carriages;
+    public void setTrainCarriages(Set<TrainCarriage> trainCarriages) {
+        TrainCarriages = trainCarriages;
     }
 }

@@ -16,7 +16,7 @@ public class ApplicationContext {
 
     private ApplicationContext() {}
 
-    private EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("persistance_util");
+    private EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("persistence_unit");
     private EntityManager entityManager;
 
     private StationDAO getStationDAO() {

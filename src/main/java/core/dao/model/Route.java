@@ -20,7 +20,7 @@ public class Route extends BaseEntity {
     private Set<Waypoint> waypoints;
 
     @OneToMany(mappedBy = "routeForTrain")
-    private Set<Train> trains;
+    private Set<TrainRoute> trainRoutes;
 
     public String getName() {
         return name;
@@ -46,11 +46,11 @@ public class Route extends BaseEntity {
         this.waypoints = waypoints;
     }
 
-    public Set<Train> getTrains() {
-        return trains;
+    public Set<TrainRoute> getTrainRoutes() {
+        return trainRoutes;
     }
 
-    public void setTrains(Set<Train> trains) {
-        this.trains = trains;
+    public void setTrainRoutes(Set<TrainRoute> trainRoutes) {
+        this.trainRoutes = trainRoutes;
     }
 }

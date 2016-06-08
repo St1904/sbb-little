@@ -7,7 +7,9 @@
         <setting name="provider-name" value="Hibernate" />
         <datasource-mapping>
           <factory-entry name="persistance_unit" />
+          <factory-entry name="persistence_unit" value="d7b747dd-e7f0-4186-af0f-ca9ea945dfb3" />
         </datasource-mapping>
+        <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/META-INF/persistence.xml" />
       </configuration>
     </facet>
   </component>

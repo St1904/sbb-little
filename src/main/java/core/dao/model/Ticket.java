@@ -10,7 +10,7 @@ public class Ticket extends BaseEntity{
     @JoinColumn(name = "trainRoute_id", nullable = false)
     private TrainRoute trainRoute;
 
-    @Column(name = "carriage_namber", nullable = false)
+    @Column(name = "carriage_number", nullable = false)
     private int carriageNumber;
 
     @Column(name = "seat")

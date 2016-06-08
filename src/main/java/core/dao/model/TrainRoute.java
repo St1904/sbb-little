@@ -11,7 +11,7 @@ public class TrainRoute extends BaseEntity {
     @Column(name = "date", nullable = false)
     private Date date;
 
-    @Column(name = "time", nullable = false)
+    @Column(name = "time_start", nullable = false)
     private Time time;
 
     @Column(name = "price_coef", nullable = false)
