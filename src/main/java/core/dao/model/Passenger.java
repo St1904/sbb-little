@@ -1,10 +1,7 @@
 package core.dao.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
-import javax.persistence.UniqueConstraint;
-import java.sql.Date;
+import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name = "Passenger", uniqueConstraints = @UniqueConstraint(columnNames = {"name", "surname", "birthdate"}))
@@ -15,6 +12,7 @@ public class Passenger extends BaseEntity {
     @Column(name = "surname", nullable = false, length = 45)
     private String surname;
 
+    @Temporal(TemporalType.DATE)
     @Column(name = "birthdate", nullable = false)
     private Date birthdate;
 

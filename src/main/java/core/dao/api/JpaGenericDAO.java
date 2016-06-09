@@ -5,7 +5,7 @@ import core.dao.model.BaseEntity;
 import javax.persistence.EntityManager;
 
 public abstract class JpaGenericDAO<T extends BaseEntity> implements GenericDAO<T> {
-    private EntityManager entityManager;
+    protected EntityManager entityManager;
     private Class<T> clazz;
 
     public JpaGenericDAO (EntityManager entityManager, Class<T> clazz) {

@@ -8,7 +8,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 public class ApplicationContext {
-    private static ApplicationContext instance = new ApplicationContext();
+    private static final ApplicationContext instance = new ApplicationContext();
 
     public static ApplicationContext getInstance() {
         return instance;
@@ -16,15 +16,20 @@ public class ApplicationContext {
 
     private ApplicationContext() {}
 
-    private EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("persistence_unit");
+    private EntityManagerFactory entityManagerFactory;
     private EntityManager entityManager;
 
     private StationDAO getStationDAO() {
         return new JpaStationDAO(getEntityManager());
     }
 
+    private EntityManagerFactory getEntityManagerFactory() {
+        if (entityManagerFactory == null) entityManagerFactory = Persistence.createEntityManagerFactory("persistence_util");
+        return entityManagerFactory;
+    }
+
     public EntityManager getEntityManager() {
-        if (entityManager == null) entityManagerFactory.createEntityManager();
+        if (entityManager == null) entityManager = getEntityManagerFactory().createEntityManager();
         return entityManager;
     }
 }
