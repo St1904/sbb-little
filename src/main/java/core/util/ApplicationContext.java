@@ -2,6 +2,8 @@ package core.util;
 
 import core.dao.api.StationDAO;
 import core.dao.jpa.JpaStationDAO;
+import core.services.StationService;
+import core.services.StationServiceImpl;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -19,17 +21,23 @@ public class ApplicationContext {
     private EntityManagerFactory entityManagerFactory;
     private EntityManager entityManager;
 
-    private StationDAO getStationDAO() {
-        return new JpaStationDAO(getEntityManager());
-    }
-
     private EntityManagerFactory getEntityManagerFactory() {
-        if (entityManagerFactory == null) entityManagerFactory = Persistence.createEntityManagerFactory("persistence_util");
+        if (entityManagerFactory == null) entityManagerFactory = Persistence.createEntityManagerFactory("persistence_unit");
         return entityManagerFactory;
     }
 
     public EntityManager getEntityManager() {
         if (entityManager == null) entityManager = getEntityManagerFactory().createEntityManager();
         return entityManager;
+    }
+
+
+    public StationDAO getStationDAO() {
+        return new JpaStationDAO(getEntityManager());
+    }
+
+
+    public StationService getStationService() {
+        return new StationServiceImpl(getStationDAO());
     }
 }

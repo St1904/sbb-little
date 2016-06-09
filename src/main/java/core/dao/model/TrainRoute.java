@@ -2,17 +2,18 @@ package core.dao.model;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
-import java.sql.Date;
-import java.sql.Time;
+import java.util.Date;
 
 @Entity
 @Table(name = "TrainRoute")
 public class TrainRoute extends BaseEntity {
+    @Temporal(value = TemporalType.DATE)
     @Column(name = "date", nullable = false)
     private Date date;
 
+    @Temporal(value = TemporalType.TIME)
     @Column(name = "time_start", nullable = false)
-    private Time time;
+    private Date time;
 
     @Column(name = "price_coef", nullable = false)
     private BigDecimal priceCoef;
@@ -33,11 +34,11 @@ public class TrainRoute extends BaseEntity {
         this.date = date;
     }
 
-    public Time getTime() {
+    public Date getTime() {
         return time;
     }
 
-    public void setTime(Time time) {
+    public void setTime(Date time) {
         this.time = time;
     }
 
