@@ -20,6 +20,9 @@ public class Waypoint extends BaseEntity {
     @JoinColumn(name = "station_id", nullable = false)
     private Station station;
 
+    public Waypoint() {
+    }
+
     public int getArrival() {
         return arrival;
     }

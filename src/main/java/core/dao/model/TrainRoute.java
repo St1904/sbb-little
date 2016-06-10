@@ -26,6 +26,9 @@ public class TrainRoute extends BaseEntity {
     @JoinColumn(name = "train_id", nullable = false)
     private Train trainForRoute;
 
+    public TrainRoute() {
+    }
+
     public Date getDate() {
         return date;
     }

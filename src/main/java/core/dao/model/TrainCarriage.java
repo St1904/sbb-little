@@ -16,6 +16,8 @@ public class TrainCarriage extends BaseEntity {
     @JoinColumn(name = "carriage_id", nullable = false)
     private Carriage carriage;
 
+    public TrainCarriage() {}
+
     public int getCarriageNumber() {
         return carriageNumber;
     }

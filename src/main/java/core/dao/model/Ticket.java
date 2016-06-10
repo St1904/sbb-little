@@ -31,6 +31,9 @@ public class Ticket extends BaseEntity{
     @Column(name = "price")
     private BigDecimal price;
 
+    public Ticket() {
+    }
+
     public TrainRoute getTrainRoute() {
         return trainRoute;
     }

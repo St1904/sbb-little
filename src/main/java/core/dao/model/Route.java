@@ -22,6 +22,9 @@ public class Route extends BaseEntity {
     @OneToMany(mappedBy = "routeForTrain")
     private Set<TrainRoute> trainRoutes;
 
+    public Route() {
+    }
+
     public String getName() {
         return name;
     }

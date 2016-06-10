@@ -21,6 +21,9 @@ public class Train extends BaseEntity {
     @OneToMany(mappedBy = "trainForCarriage")
     private Set<TrainCarriage> TrainCarriages;
 
+    public Train() {
+    }
+
     public String getName() {
         return name;
     }

@@ -16,6 +16,9 @@ public class Passenger extends BaseEntity {
     @Column(name = "birthdate", nullable = false)
     private Date birthdate;
 
+    public Passenger() {
+    }
+
     public String getName() {
         return name;
     }

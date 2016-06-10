@@ -15,6 +15,9 @@ public class Station extends BaseEntity {
     @OneToMany(mappedBy = "station")
     private Set<Waypoint> waypoints;
 
+    public Station() {
+    }
+
     public String getName() {
         return name;
     }
