@@ -23,7 +23,7 @@ public abstract class JpaGenericDAO<T extends BaseEntity> implements GenericDAO<
     public void update(T entity) {
         entityManager.getTransaction().begin();
         entityManager.merge(entity);
-        entityManager.getTransaction().begin();
+        entityManager.getTransaction().commit();
     }
 
     public void delete(T entity) {

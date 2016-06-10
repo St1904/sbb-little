@@ -29,7 +29,11 @@ public class TrainServiceImpl implements TrainService {
         carriageDAO.create(carriage);
     }
 
-    public void addTrain(String name, Set<Carriage> carriages) {
+    public Carriage findCarriageById(long id) {
+        return carriageDAO.find(id);
+    }
+
+    public void addTrain(String name, List<Carriage> carriages) {
         Train train = new Train();
         train.setName(name);
 
@@ -40,13 +44,11 @@ public class TrainServiceImpl implements TrainService {
         train.setSeats(seats);
         trainDAO.create(train);
 
-        int carriageNumber = 0;
         TrainCarriage trainCarriage;
-        for (Carriage carriage : carriages) {
-            carriageNumber++;
+        for (int i = 0; i < carriages.size(); i++) {
             trainCarriage = new TrainCarriage();
-            trainCarriage.setCarriage(carriage);
-            trainCarriage.setCarriageNumber(carriageNumber);
+            trainCarriage.setCarriage(carriages.get(i));
+            trainCarriage.setCarriageNumber(i);
             trainCarriage.setTrainForCarriage(train);
             trainCarriageDAO.create(trainCarriage);
         }

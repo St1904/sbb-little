@@ -35,7 +35,17 @@ public class ApplicationContext {
     }
 
     public EntityManager getEntityManager() {
-        if (entityManager == null) entityManager = getEntityManagerFactory().createEntityManager();
+        if (entityManager == null) {
+            entityManager = getEntityManagerFactory().createEntityManager();
+
+            /*//added
+            Runtime.getRuntime().addShutdownHook(new Thread() {
+                public void run() {
+                    entityManager.close();
+                }
+            });
+            //end of added*/
+        }
         return entityManager;
     }
 
