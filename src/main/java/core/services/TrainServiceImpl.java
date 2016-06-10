@@ -1,26 +1,32 @@
 package core.services;
 
+import core.dao.api.CarriageDAO;
 import core.dao.api.TrainCarriageDAO;
 import core.dao.api.TrainDAO;
 import core.dao.model.Carriage;
 import core.dao.model.Train;
 import core.dao.model.TrainCarriage;
 
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
 public class TrainServiceImpl implements TrainService {
     private TrainDAO trainDAO;
     private TrainCarriageDAO trainCarriageDAO;
+    private CarriageDAO carriageDAO;
 
-    public TrainServiceImpl(TrainDAO trainDAO, TrainCarriageDAO trainCarriageDAO) {
+    public TrainServiceImpl(TrainDAO trainDAO, TrainCarriageDAO trainCarriageDAO, CarriageDAO carriageDAO) {
         this.trainDAO = trainDAO;
         this.trainCarriageDAO = trainCarriageDAO;
+        this.carriageDAO = carriageDAO;
     }
 
     public List<Train> showTrains() {
         return trainDAO.findAll();
+    }
+
+    public void addCarriage(Carriage carriage) {
+        carriageDAO.create(carriage);
     }
 
     public void addTrain(String name, Set<Carriage> carriages) {

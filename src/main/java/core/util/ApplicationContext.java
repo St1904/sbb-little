@@ -58,6 +58,6 @@ public class ApplicationContext {
         return new StationServiceImpl(getStationDAO());
     }
     public TrainService getTrainService() {
-        return new TrainServiceImpl(getTrainDAO(), getTrainCarriageDAO());
+        return new TrainServiceImpl(getTrainDAO(), getTrainCarriageDAO(), getCarriageDAO());
     }
 }
