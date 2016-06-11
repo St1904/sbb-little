@@ -1,17 +1,8 @@
 package core.util;
 
-import core.dao.api.CarriageDAO;
-import core.dao.api.StationDAO;
-import core.dao.api.TrainCarriageDAO;
-import core.dao.api.TrainDAO;
-import core.dao.jpa.JpaCarriageDAO;
-import core.dao.jpa.JpaStationDAO;
-import core.dao.jpa.JpaTrainCarriageDAO;
-import core.dao.jpa.JpaTrainDAO;
-import core.services.StationService;
-import core.services.StationServiceImpl;
-import core.services.TrainService;
-import core.services.TrainServiceImpl;
+import core.dao.api.*;
+import core.dao.jpa.*;
+import core.services.*;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -34,7 +25,7 @@ public class ApplicationContext {
         return entityManagerFactory;
     }
 
-    public EntityManager getEntityManager() {
+    private EntityManager getEntityManager() {
         if (entityManager == null) {
             entityManager = getEntityManagerFactory().createEntityManager();
 
@@ -50,17 +41,23 @@ public class ApplicationContext {
     }
 
 
-    public StationDAO getStationDAO() {
+    private StationDAO getStationDAO() {
         return new JpaStationDAO(getEntityManager());
     }
-    public CarriageDAO getCarriageDAO() {
+    private CarriageDAO getCarriageDAO() {
         return new JpaCarriageDAO(getEntityManager());
     }
-    public TrainDAO getTrainDAO() {
+    private TrainDAO getTrainDAO() {
         return new JpaTrainDAO(getEntityManager());
     }
-    public TrainCarriageDAO getTrainCarriageDAO() {
+    private TrainCarriageDAO getTrainCarriageDAO() {
         return new JpaTrainCarriageDAO(getEntityManager());
+    }
+    private WaypointDAO getWaypointDAO() {
+        return new JpaWaypointDAO(getEntityManager());
+    }
+    private RouteDAO getRouteDAO() {
+        return new JpaRouteDAO(getEntityManager());
     }
 
 
@@ -69,5 +66,8 @@ public class ApplicationContext {
     }
     public TrainService getTrainService() {
         return new TrainServiceImpl(getTrainDAO(), getTrainCarriageDAO(), getCarriageDAO());
+    }
+    public RouteService getRouteService() {
+        return new RouteServiceImpl(getWaypointDAO(), getRouteDAO());
     }
 }
