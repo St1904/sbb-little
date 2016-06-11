@@ -42,7 +42,7 @@ ENGINE = InnoDB;
 -- Table `SBB_little`.`Waypoint`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `SBB_little`.`Waypoint` (
-  `id` BIGINT NOT NULL,
+  `id` BIGINT NOT NULL AUTO_INCREMENT,
   `route_id` BIGINT NOT NULL,
   `station_id` BIGINT NOT NULL,
   `arrival` INT NOT NULL,
