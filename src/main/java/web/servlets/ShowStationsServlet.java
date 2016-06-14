@@ -16,8 +16,11 @@ public class ShowStationsServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<Station> stationList = ApplicationContext.getInstance().getStationService().showStations();
+/*        for (Station station : stationList) {
+            System.out.println(station);
+        }*/
         req.setAttribute("stationList", stationList);
-        req.getRequestDispatcher("showstations.jsp").forward(req, resp);
+        req.getRequestDispatcher("showStations.jsp").forward(req, resp);
     }
 
     @Override

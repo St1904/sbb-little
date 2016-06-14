@@ -38,4 +38,9 @@ public class Station extends BaseEntity {
     public void setSuffix(String suffix) {
         this.suffix = suffix;
     }
+
+    @Override
+    public String toString() {
+        return this.getId() + " " + this.getName() + " " + this.getSuffix();
+    }
 }

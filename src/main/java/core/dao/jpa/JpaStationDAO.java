@@ -13,7 +13,6 @@ public class JpaStationDAO extends JpaGenericDAO<Station> implements StationDAO 
     }
 
     public List<Station> findAll() {
-        List<Station> stations = (List<Station>) entityManager.createQuery("Select c from Station c").getResultList();
-        return stations;
+        return (List<Station>) entityManager.createQuery("Select c from Station c").getResultList();
     }
 }
