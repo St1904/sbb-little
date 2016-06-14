@@ -20,5 +20,9 @@ public class StationServiceImpl implements StationService {
         return dao.findAll();
     }
 
+    public Station findById(long id) {
+        return dao.find(id);
+    }
+
     //public Station findByName(String name) {}
 }
