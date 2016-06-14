@@ -18,6 +18,11 @@ public class Station extends BaseEntity {
     public Station() {
     }
 
+    public Station(String name, String suffix) {
+        this.name = name;
+        this.suffix = suffix;
+    }
+
     public String getName() {
         return name;
     }

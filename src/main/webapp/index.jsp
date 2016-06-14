@@ -5,6 +5,8 @@
 </head>
 <body>
     <h1>Выберите следующий шаг:</h1>
-    <a href="/trains">Делать поезда!!!</a>
+    <a href="/trains">Делать поезда!!!</a> <br>
+    <a href="/station">Добавление новой станции</a> <br>
+    <a href="/showStations">Показать все станции</a> <br>
 </body>
 </html>
