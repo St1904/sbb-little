@@ -5,6 +5,6 @@
 </head>
 <body>
     <h1>Выберите следующий шаг:</h1>
-    <button onclick="window.location.href='trains.jsp'">Добавить новый поезд...</button>
+    <a href="/trains">Делать поезда!!!</a>
 </body>
 </html>

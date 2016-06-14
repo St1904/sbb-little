@@ -7,11 +7,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/trains")
-public class Trains extends HttpServlet {
+@WebServlet("/station")
+public class StationServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("trains.jsp").forward(req, resp);
+        req.getRequestDispatcher("station.jsp").forward(req, resp);
     }
 
     @Override
