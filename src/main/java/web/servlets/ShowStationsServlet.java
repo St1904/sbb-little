@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet("/showStations")
@@ -19,7 +20,19 @@ public class ShowStationsServlet extends HttpServlet {
 /*        for (Station station : stationList) {
             System.out.println(station);
         }*/
-        req.setAttribute("stationList", stationList);
+//        String s = "Test string for jstl";
+/*        String[] s = new String[3];
+        s[0] = "s1";
+        s[1] = "s2";
+        s[2] = "s3";
+        for (String ss : s) {
+            System.out.println(ss);
+        }*/
+
+
+//        req.setAttribute("testString", s);
+
+        req.setAttribute("stations", stationList);
         req.getRequestDispatcher("showStations.jsp").forward(req, resp);
     }
 
