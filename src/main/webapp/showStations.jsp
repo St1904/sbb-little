@@ -8,23 +8,28 @@
 </head>
 <body>
     <h3>Тут как бы все станции в одной таблице</h3> <br/>
-<%--    <c:forEach var="sss" items="${testString}">
-        ${sss} <br/>
-    </c:forEach>--%>
-<%--    <table border="1">
-        <c:forEach var="str" items="${requestScope['testString']}">
+    <%--<table border="1">
+        <c:forEach var="station" items="${stations}">
             <tr>
-                <td>${str}</td>
+                <td>${station}</td>
             </tr>
         </c:forEach>
     </table>--%>
 
-    <%
+
+    <%--<c:out value="${testString}"/> it's working string--%>
+
+    <c:forEach var="sss" items="${strings}">
+        ${sss} <br/>
+    </c:forEach>
+
+
+<%--    <%
         List<Station> stations = (List<Station>) request.getAttribute("stations");
         for (Station station : stations) {
             out.println(station);
         }
 
-    %>
+    %>--%>
 </body>
 </html>

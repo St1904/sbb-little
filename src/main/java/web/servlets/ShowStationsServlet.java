@@ -16,23 +16,34 @@ import java.util.List;
 public class ShowStationsServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        List<Station> stationList = ApplicationContext.getInstance().getStationService().showStations();
+//        List<Station> stationList = ApplicationContext.getInstance().getStationService().showStations();
 /*        for (Station station : stationList) {
             System.out.println(station);
         }*/
-//        String s = "Test string for jstl";
-/*        String[] s = new String[3];
+
+        String[] s = new String[3];
         s[0] = "s1";
         s[1] = "s2";
         s[2] = "s3";
         for (String ss : s) {
             System.out.println(ss);
-        }*/
+        }
+        req.setAttribute("strings", s);
 
 
-//        req.setAttribute("testString", s);
+/*
+  //working in c:out
+        String s = "Test string for jstl";
+        req.setAttribute("testString", s);*/
 
-        req.setAttribute("stations", stationList);
+
+/*        ArrayList<String> stationList = new ArrayList<String>();
+        stationList.add("s1");
+        stationList.add("s2");
+        stationList.add("s3");*/
+
+
+//        req.setAttribute("stations", stationList);
         req.getRequestDispatcher("showStations.jsp").forward(req, resp);
     }
 
