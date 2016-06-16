@@ -40,12 +40,14 @@ public class TrainServiceImpl implements TrainService {
         TrainCarriage trainCarriage;
         int count = 0;
         for (Map.Entry<Carriage, Integer> pair : map.entrySet()) {
-            count++;
-            trainCarriage = new TrainCarriage();
-            trainCarriage.setCarriage(pair.getKey());
-            trainCarriage.setCarriageNumber(count);
-            trainCarriage.setTrainForCarriage(train);
-            trainCarriageDAO.create(trainCarriage);
+            for (int i = 1; i <= pair.getValue(); i++) {
+                trainCarriage = new TrainCarriage();
+                trainCarriage.setCarriage(pair.getKey());
+                trainCarriage.setCarriageNumber(i + count);
+                trainCarriage.setTrainForCarriage(train);
+                trainCarriageDAO.create(trainCarriage);
+            }
+            count += pair.getValue();
         }
     }
 
