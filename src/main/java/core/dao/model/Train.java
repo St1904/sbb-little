@@ -55,4 +55,13 @@ public class Train extends BaseEntity {
     public void setTrainCarriages(Set<TrainCarriage> trainCarriages) {
         TrainCarriages = trainCarriages;
     }
+
+    @Override
+    public String toString() {
+        return "Train{" +
+                "id=" + this.getId() + '\'' +
+                "name='" + name + '\'' +
+                ", seats=" + seats +
+                '}';
+    }
 }

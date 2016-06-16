@@ -5,5 +5,6 @@ import core.dao.model.Train;
 import java.util.List;
 
 public interface TrainDAO extends GenericDAO<Train> {
-    public List<Train> findAll();
+    List<Train> findAll();
+    Train findByName(String name);
 }

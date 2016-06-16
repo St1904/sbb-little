@@ -54,4 +54,14 @@ public class Waypoint extends BaseEntity {
     public void setStation(Station station) {
         this.station = station;
     }
+
+    @Override
+    public String toString() {
+        return "Waypoint{" +
+                "arrival=" + arrival +
+                ", stayCount=" + stayCount +
+                ", routeForWaypoint=" + routeForWaypoint +
+                ", station=" + station +
+                '}';
+    }
 }

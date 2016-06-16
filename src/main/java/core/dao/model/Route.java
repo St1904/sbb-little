@@ -56,4 +56,14 @@ public class Route extends BaseEntity {
     public void setTrainRoutes(Set<TrainRoute> trainRoutes) {
         this.trainRoutes = trainRoutes;
     }
+
+    @Override
+    public String toString() {
+        return "Route{" +
+                "name='" + name + '\'' +
+                ", pricePerMinute=" + pricePerMinute +
+                ", waypoints=" + waypoints +
+                ", trainRoutes=" + trainRoutes +
+                '}';
+    }
 }

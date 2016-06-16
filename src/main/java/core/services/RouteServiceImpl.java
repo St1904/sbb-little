@@ -33,4 +33,8 @@ public class RouteServiceImpl implements RouteService {
         }
 
     }
+
+    public List<Route> showRoutes() {
+        return routeDAO.findAll();
+    }
 }

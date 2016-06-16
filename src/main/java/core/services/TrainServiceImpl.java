@@ -7,8 +7,9 @@ import core.dao.model.Carriage;
 import core.dao.model.Train;
 import core.dao.model.TrainCarriage;
 
+import java.math.BigDecimal;
 import java.util.List;
-import java.util.Set;
+import java.util.Map;
 
 public class TrainServiceImpl implements TrainService {
     private TrainDAO trainDAO;
@@ -21,36 +22,46 @@ public class TrainServiceImpl implements TrainService {
         this.carriageDAO = carriageDAO;
     }
 
-    public List<Train> showTrains() {
-        return trainDAO.findAll();
+    public void addCarriage(String type, int capacity, BigDecimal price) {
+        carriageDAO.create(new Carriage(type, capacity, price));
     }
 
-    public void addCarriage(Carriage carriage) {
-        carriageDAO.create(carriage);
+    public void addTrain(String name, Map<Carriage, Integer> map) {
+        Train train = new Train();
+        train.setName(name);
+
+        int seats = 0;
+        for (Map.Entry<Carriage, Integer> pair : map.entrySet()) {
+            seats += pair.getKey().getCapacity() * pair.getValue();
+        }
+        train.setSeats(seats);
+        trainDAO.create(train);
+
+        TrainCarriage trainCarriage;
+        int count = 0;
+        for (Map.Entry<Carriage, Integer> pair : map.entrySet()) {
+            count++;
+            trainCarriage = new TrainCarriage();
+            trainCarriage.setCarriage(pair.getKey());
+            trainCarriage.setCarriageNumber(count);
+            trainCarriage.setTrainForCarriage(train);
+            trainCarriageDAO.create(trainCarriage);
+        }
+    }
+
+    public List<Train> showTrains() {
+        return trainDAO.findAll();
     }
 
     public Carriage findCarriageById(long id) {
         return carriageDAO.find(id);
     }
 
-    public void addTrain(String name, List<Carriage> carriages) {
-        Train train = new Train();
-        train.setName(name);
+    public Train findTrainByName(String name) {
+        return trainDAO.findByName(name);
+    }
 
-        int seats = 0;
-        for (Carriage carriage : carriages) {
-            seats += carriage.getCapacity();
-        }
-        train.setSeats(seats);
-        trainDAO.create(train);
-
-        TrainCarriage trainCarriage;
-        for (int i = 0; i < carriages.size(); i++) {
-            trainCarriage = new TrainCarriage();
-            trainCarriage.setCarriage(carriages.get(i));
-            trainCarriage.setCarriageNumber(i);
-            trainCarriage.setTrainForCarriage(train);
-            trainCarriageDAO.create(trainCarriage);
-        }
+    public List<Carriage> showCarriages(Train train) {
+        return trainCarriageDAO.findByTrain(train);
     }
 }

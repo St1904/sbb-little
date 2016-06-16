@@ -17,6 +17,12 @@ public class Carriage extends BaseEntity {
 
     public Carriage() {}
 
+    public Carriage(String type, int capacity, BigDecimal priceForCarriage) {
+        this.capacity = capacity;
+        this.type = type;
+        this.priceForCarriage = priceForCarriage;
+    }
+
     public int getCapacity() {
         return capacity;
     }
@@ -39,5 +45,14 @@ public class Carriage extends BaseEntity {
 
     public void setPriceForCarriage(BigDecimal priceForCarriage) {
         this.priceForCarriage = priceForCarriage;
+    }
+
+    @Override
+    public String toString() {
+        return "Carriage{" +
+                "capacity=" + capacity +
+                ", type='" + type + '\'' +
+                ", priceForCarriage=" + priceForCarriage +
+                '}';
     }
 }
