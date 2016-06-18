@@ -8,20 +8,20 @@
 </head>
 <body>
     <h3>Тут как бы все станции в одной таблице</h3> <br/>
-    <%--<table border="1">
+    <table border="1">
         <c:forEach var="station" items="${stations}">
             <tr>
                 <td>${station}</td>
             </tr>
         </c:forEach>
-    </table>--%>
+    </table>
 
 
     <%--<c:out value="${testString}"/> it's working string--%>
-
+<%--
     <c:forEach var="sss" items="${strings}">
         ${sss} <br/>
-    </c:forEach>
+    </c:forEach>--%>
 
 
 <%--    <%

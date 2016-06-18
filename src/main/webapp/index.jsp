@@ -4,9 +4,7 @@
     <title>Title</title>
 </head>
 <body>
-    <h1>Выберите следующий шаг:</h1>
-    <a href="/trains">Делать поезда!!!</a> <br>
-    <a href="/station">Добавление новой станции</a> <br>
-    <a href="/showStations">Показать все станции</a> <br>
+    <h1>Это index.jsp</h1>
+    <a href="/sbb/admin">Перейти в админку</a> <br>
 </body>
 </html>

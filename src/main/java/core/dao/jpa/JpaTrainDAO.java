@@ -5,7 +5,7 @@ import core.dao.api.TrainDAO;
 import core.dao.model.Train;
 
 import javax.persistence.EntityManager;
-import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 import java.util.List;
 
 public class JpaTrainDAO extends JpaGenericDAO<Train> implements TrainDAO {
@@ -18,8 +18,8 @@ public class JpaTrainDAO extends JpaGenericDAO<Train> implements TrainDAO {
     }
 
     public Train findByName(String name) {
-        Query query = entityManager.createQuery("select c from Train c where c.name = :name");
+        TypedQuery<Train> query = entityManager.createQuery("select c from Train c where c.name = :name", Train.class);
         query.setParameter("name", name);
-        return (Train) query.getSingleResult();
+        return query.getSingleResult();
     }
 }
