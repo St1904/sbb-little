@@ -11,5 +11,6 @@
         Стоимость одного места: <input type="number" step="0.01" name="price" required/> <br/>
         <button type="submit">Добавить</button>
     </form>
+    <a href="/sbb/admin"><button>На главную</button></a>
 </body>
 </html>

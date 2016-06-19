@@ -22,7 +22,7 @@
     </table>
     <br/>
     <a href="/sbb/admin/addStation"><button>Добавить новую станцию</button></a>
-
+    <a href="/sbb/admin"><button>На главную</button></a>
 
 </body>
 </html>

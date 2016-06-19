@@ -10,5 +10,6 @@
         Подстанция/вокзал: <input type="text" name="stationSuffix" required/> <br>
         <button type="submit">Добавить</button>
     </form>
+    <a href="/sbb/admin"><button>На главную</button></a>
 </body>
 </html>

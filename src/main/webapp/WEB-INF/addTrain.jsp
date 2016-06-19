@@ -31,5 +31,6 @@
         </table>
         <input type="submit"/>
     </form>
+    <a href="/sbb/admin/addCarriage"><button>Добавить новый тип вагона</button></a>
 </body>
 </html>

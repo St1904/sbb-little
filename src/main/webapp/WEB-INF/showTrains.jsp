@@ -21,7 +21,7 @@
     </c:forEach>
 </table>
 <br/>
-<a href="/sbb/admin/addCarriage"><button>Добавить новый тип вагона</button></a> <br/>
+<a href="/sbb/admin/showCarriages"><button>Посмотреть доступные типы вагонов</button></a>
 <a href="/sbb/admin/addTrain"><button>Добавить новый поезд</button></a>
 </body>
 </html>
