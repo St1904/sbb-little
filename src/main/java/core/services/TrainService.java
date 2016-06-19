@@ -17,5 +17,6 @@ public interface TrainService {
     Carriage findCarriageById(long id);
     Train findTrainByName(String name);
 
-    List<Carriage> showCarriages(Train train);
+    List<Carriage> findCarriagesByTrain(Train train);
+    List<Carriage> showCarriages();
 }

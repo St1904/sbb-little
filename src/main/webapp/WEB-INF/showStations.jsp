@@ -20,8 +20,8 @@
             </tr>
         </c:forEach>
     </table>
-
-
+    <br/>
+    <a href="/sbb/admin/addStation"><button>Добавить новую станцию</button></a>
 
 
 </body>

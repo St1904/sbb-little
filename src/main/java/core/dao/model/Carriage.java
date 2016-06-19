@@ -39,7 +39,7 @@ public class Carriage extends BaseEntity {
         this.type = type;
     }
 
-    public BigDecimal getPriceForCarriageType() {
+    public BigDecimal getPriceForCarriage() {
         return priceForCarriage;
     }
 

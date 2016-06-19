@@ -5,9 +5,8 @@
 </head>
 <body>
     <h3>Main for admin</h3>
-    <h1>Выберите следующий шаг:</h1>
-    <a href="/sbb/admin/trains">Делать поезда!!!</a> <br>
-    <a href="/sbb/admin/addStation">Добавление новой станции</a> <br>
+    <h2>Выберите следующий шаг:</h2>
     <a href="/sbb/admin/showStations">Показать все станции</a> <br>
+    <a href="/sbb/admin/showTrains">Показать все поезда</a>
 </body>
 </html>

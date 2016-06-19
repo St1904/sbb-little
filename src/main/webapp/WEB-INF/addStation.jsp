@@ -4,11 +4,11 @@
     <title>Title</title>
 </head>
 <body>
-    <h1>Типа добавление новой станции</h1>
+    <h2>Добавление новой станции</h2>
     <form method="post">
-        Название станции: <input type="text" name="stationName"> <br>
-        Подстанция/вокзал: <input type="text" name="stationSuffix"> <br>
-        <input type="submit">
+        Название станции: <input type="text" name="stationName" required/> <br>
+        Подстанция/вокзал: <input type="text" name="stationSuffix" required/> <br>
+        <button type="submit">Добавить</button>
     </form>
 </body>
 </html>

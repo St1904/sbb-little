@@ -1,29 +1,40 @@
 package core.services;
 
 import core.dao.api.CarriageDAO;
+import core.dao.api.DaoException;
 import core.dao.api.TrainCarriageDAO;
 import core.dao.api.TrainDAO;
 import core.dao.model.Carriage;
 import core.dao.model.Train;
 import core.dao.model.TrainCarriage;
 
+import javax.persistence.EntityManager;
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
 
 public class TrainServiceImpl implements TrainService {
+    private EntityManager entityManager;
     private TrainDAO trainDAO;
     private TrainCarriageDAO trainCarriageDAO;
     private CarriageDAO carriageDAO;
 
-    public TrainServiceImpl(TrainDAO trainDAO, TrainCarriageDAO trainCarriageDAO, CarriageDAO carriageDAO) {
+    public TrainServiceImpl(EntityManager entityManager, TrainDAO trainDAO, TrainCarriageDAO trainCarriageDAO, CarriageDAO carriageDAO) {
+        this.entityManager = entityManager;
         this.trainDAO = trainDAO;
         this.trainCarriageDAO = trainCarriageDAO;
         this.carriageDAO = carriageDAO;
     }
 
-    public void addCarriage(String type, int capacity, BigDecimal price) {
-        carriageDAO.create(new Carriage(type, capacity, price));
+    public void addCarriage(String type, int capacity, BigDecimal price) throws DaoException {
+        try {
+            entityManager.getTransaction().begin();
+            carriageDAO.create(new Carriage(type, capacity, price));
+            entityManager.getTransaction().commit();
+        } catch (Exception e) {
+            entityManager.getTransaction().rollback();
+            throw new DaoException(e);
+        }
     }
 
     public void addTrain(String name, Map<Carriage, Integer> map) {
@@ -63,7 +74,11 @@ public class TrainServiceImpl implements TrainService {
         return trainDAO.findByName(name);
     }
 
-    public List<Carriage> showCarriages(Train train) {
+    public List<Carriage> findCarriagesByTrain(Train train) {
         return trainCarriageDAO.findByTrain(train);
+    }
+
+    public List<Carriage> showCarriages() {
+        return carriageDAO.findAll();
     }
 }
