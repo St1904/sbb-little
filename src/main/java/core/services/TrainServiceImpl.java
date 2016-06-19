@@ -38,27 +38,34 @@ public class TrainServiceImpl implements TrainService {
     }
 
     public void addTrain(String name, Map<Carriage, Integer> map) {
-        Train train = new Train();
-        train.setName(name);
+        try {
+            entityManager.getTransaction().begin();
+            Train train = new Train();
+            train.setName(name);
 
-        int seats = 0;
-        for (Map.Entry<Carriage, Integer> pair : map.entrySet()) {
-            seats += pair.getKey().getCapacity() * pair.getValue();
-        }
-        train.setSeats(seats);
-        trainDAO.create(train);
-
-        TrainCarriage trainCarriage;
-        int count = 0;
-        for (Map.Entry<Carriage, Integer> pair : map.entrySet()) {
-            for (int i = 1; i <= pair.getValue(); i++) {
-                trainCarriage = new TrainCarriage();
-                trainCarriage.setCarriage(pair.getKey());
-                trainCarriage.setCarriageNumber(i + count);
-                trainCarriage.setTrainForCarriage(train);
-                trainCarriageDAO.create(trainCarriage);
+            int seats = 0;
+            for (Map.Entry<Carriage, Integer> pair : map.entrySet()) {
+                seats += pair.getKey().getCapacity() * pair.getValue();
             }
-            count += pair.getValue();
+            train.setSeats(seats);
+            trainDAO.create(train);
+
+            TrainCarriage trainCarriage;
+            int count = 0;
+            for (Map.Entry<Carriage, Integer> pair : map.entrySet()) {
+                for (int i = 1; i <= pair.getValue(); i++) {
+                    trainCarriage = new TrainCarriage();
+                    trainCarriage.setCarriage(pair.getKey());
+                    trainCarriage.setCarriageNumber(i + count);
+                    trainCarriage.setTrainForCarriage(train);
+                    trainCarriageDAO.create(trainCarriage);
+                }
+                count += pair.getValue();
+            }
+            entityManager.getTransaction().commit();
+        } catch (Exception e) {
+            entityManager.getTransaction().rollback();
+            throw new DaoException(e);
         }
     }
 

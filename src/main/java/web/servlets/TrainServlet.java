@@ -15,9 +15,11 @@ import java.util.Map;
 
 @WebServlet("/admin/addTrain")
 public class TrainServlet extends HttpServlet {
+    List<Carriage> carriageList;
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        List<Carriage> carriageList = ApplicationContext.getInstance().getTrainService().showCarriages();
+        carriageList = ApplicationContext.getInstance().getTrainService().showCarriages();
 
         req.setAttribute("carriages", carriageList);
 
@@ -26,6 +28,18 @@ public class TrainServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doPost(req, resp);
+        String[] carriageStringList = req.getParameterValues("carriageNumber");
+        Map<Carriage, Integer> carriageMap = new HashMap<Carriage, Integer>();
+        for (int i = 0; i < carriageStringList.length; i++) {
+            carriageMap.put(carriageList.get(i), Integer.parseInt(carriageStringList[i]));
+        }
+
+        for (Map.Entry<Carriage, Integer> pair : carriageMap.entrySet()) {
+            System.out.println("carriage: " + pair.getKey() + " number: " + pair.getValue());
+        }
+        String name = req.getParameter("name");
+
+        ApplicationContext.getInstance().getTrainService().addTrain(name, carriageMap);
+
     }
 }

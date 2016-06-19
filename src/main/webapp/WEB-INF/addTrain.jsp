@@ -6,25 +6,30 @@
 </head>
 <body>
     <h2>Добавление нового поезда.</h2>
-    <table>
-        <tr>
-            <td>id</td>
-            <td>Тип вагона</td>
-            <td>Вместительность</td>
-            <td>Стоимость одного места</td>
-
-            <%--<td>Количество вагонов</td>--%>
-        </tr>
-        <c:forEach var="carriage" items="${carriages}">
+    <form method="post" id="addTrain">
+        <input type="text" name="name" required/>
+        <table border="1">
             <tr>
-                <td><c:out value="${carriage.id}"/></td>
-                <td><c:out value="${carriage.type}"/></td>
-                <td><c:out value="${carriage.capacity}"/></td>
-                <td><c:out value="${carriage.priceForCarriage}"/></td>
+                <td>id</td>
+                <td>Тип вагона</td>
+                <td>Вместительность</td>
+                <td>Стоимость одного места</td>
 
+                <td>Количество вагонов</td>
             </tr>
+            <c:forEach var="carriage" items="${carriages}">
+                <tr>
+                    <td><c:out value="${carriage.id}"/></td>
+                    <td><c:out value="${carriage.type}"/></td>
+                    <td><c:out value="${carriage.capacity}"/></td>
+                    <td><c:out value="${carriage.priceForCarriage}"/></td>
 
-        </c:forEach>
-    </table>
+                    <td><input type="number" value="0" name="carriageNumber" form="addTrain"/></td>
+                </tr>
+
+            </c:forEach>
+        </table>
+        <input type="submit"/>
+    </form>
 </body>
 </html>
