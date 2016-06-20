@@ -12,4 +12,13 @@ public class Point {
         this.arrival = arrival;
         this.stay = stay;
     }
+
+    @Override
+    public String toString() {
+        return "Point{" +
+                "station=" + station +
+                ", arrival=" + arrival +
+                ", stay=" + stay +
+                '}';
+    }
 }

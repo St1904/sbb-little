@@ -15,7 +15,7 @@ import java.util.Map;
 
 @WebServlet("/admin/addTrain")
 public class TrainServlet extends HttpServlet {
-    List<Carriage> carriageList;
+    private List<Carriage> carriageList;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

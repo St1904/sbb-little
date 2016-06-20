@@ -68,6 +68,6 @@ public class ApplicationContext {
         return new TrainServiceImpl(getEntityManager(), getTrainDAO(), getTrainCarriageDAO(), getCarriageDAO());
     }
     public RouteService getRouteService() {
-        return new RouteServiceImpl(getWaypointDAO(), getRouteDAO());
+        return new RouteServiceImpl(getEntityManager(), getWaypointDAO(), getRouteDAO());
     }
 }

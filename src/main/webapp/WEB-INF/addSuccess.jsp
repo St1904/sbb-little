@@ -6,7 +6,7 @@
 </head>
 <body>
     <h2><c:out value="${message}"/></h2>
-    <a href="${backUrl}">Вернуться назад</a> <br/>
+    <a href="${backUrl}">Вернуться назад и добавить что-нибудь еще</a> <br/>
     <a href="/sbb/admin">На главную</a>
 </body>
 </html>
