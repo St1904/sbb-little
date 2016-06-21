@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7fbf61ae-ae6c-42a6-be74-5ecfa38bf43d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/core/dao/api/TrainRouteDAO.java" afterPath="$PROJECT_DIR$/src/main/java/core/dao/api/TrainRouteDAO.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/core/dao/jpa/JpaTrainRouteDAO.java" afterPath="$PROJECT_DIR$/src/main/java/core/dao/jpa/JpaTrainRouteDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/core/services/RouteService.java" afterPath="$PROJECT_DIR$/src/main/java/core/services/RouteService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/core/services/RouteServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/core/services/RouteServiceImpl.java" />
     </list>
     <ignored path="sbb-little.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -106,44 +103,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TrainServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/core/services/TrainServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
-              <caret line="92" column="33" selection-start-line="92" selection-start-column="33" selection-end-line="92" selection-end-column="33" />
-              <folding>
-                <element signature="e#3082#3083#0" expanded="true" />
-                <element signature="e#3122#3123#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StationService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/core/services/StationService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="JpaTrainRouteDAO.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/core/dao/jpa/JpaTrainRouteDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+            <state relative-caret-position="323">
+              <caret line="29" column="50" selection-start-line="29" selection-start-column="50" selection-end-line="29" selection-end-column="50" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StationServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/core/services/StationServiceImpl.java">
+      <file leaf-file-name="TicketService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/core/services/TicketService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+            <state relative-caret-position="51">
+              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TrainCarriageDAO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/core/dao/api/TrainCarriageDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="9" column="44" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JpaTrainCarriageDAO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/core/dao/jpa/JpaTrainCarriageDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="19" column="155" selection-start-line="19" selection-start-column="155" selection-end-line="19" selection-end-column="155" />
               <folding />
             </state>
           </provider>
@@ -172,7 +166,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/web/servlets/ShowStationsServlet.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/addStationFail.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/core/dao/api/DaoException.java" />
         <option value="$PROJECT_DIR$/src/main/java/core/dao/api/StationDAO.java" />
@@ -222,6 +215,7 @@
         <option value="$PROJECT_DIR$/src/main/java/core/dao/api/TrainRouteDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/core/services/RouteServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/web/servlets/TestingServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/services/TicketService.java" />
         <option value="$PROJECT_DIR$/src/main/java/core/dao/jpa/JpaTrainRouteDAO.java" />
       </list>
     </option>
@@ -1278,7 +1272,7 @@
       <workItem from="1466405657097" duration="552000" />
       <workItem from="1466431899041" duration="13849000" />
       <workItem from="1466492048681" duration="13412000" />
-      <workItem from="1466509422574" duration="22258000" />
+      <workItem from="1466509422574" duration="23928000" />
     </task>
     <task id="LOCAL-00001" summary="entities again 1">
       <created>1465315779779</created>
@@ -1525,11 +1519,18 @@
       <option name="project" value="LOCAL" />
       <updated>1466543689499</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="find Trains starting from Station (checked)">
+      <created>1466551081424</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1466551081424</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="223953000" />
+    <option name="totallyTimeSpent" value="225623000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1608,7 +1609,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Entities fixed with database connection" />
     <MESSAGE value="DAO classes added" />
     <MESSAGE value="first service - not working yet" />
     <MESSAGE value="fixed constructors (entity) + TrainService" />
@@ -1633,7 +1633,8 @@
     <MESSAGE value="addTrainRoute (checked)" />
     <MESSAGE value="find Routes between 2 Stations (checked)" />
     <MESSAGE value="find TrainRoutes between 2 dates (date + time)" />
-    <option name="LAST_COMMIT_MESSAGE" value="find TrainRoutes between 2 dates (date + time)" />
+    <MESSAGE value="find Trains starting from Station (checked)" />
+    <option name="LAST_COMMIT_MESSAGE" value="find Trains starting from Station (checked)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1895,22 +1896,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/dao/api/TrainCarriageDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="9" column="44" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/dao/jpa/JpaTrainCarriageDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="21" column="14" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/core/util/ApplicationContext.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
@@ -2009,14 +1994,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/services/TicketService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/core/services/describe.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="413">
@@ -2109,10 +2086,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/services/TicketService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/dao/api/TrainCarriageDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="9" column="44" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/dao/jpa/JpaTrainCarriageDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="19" column="155" selection-start-line="19" selection-start-column="155" selection-end-line="19" selection-end-column="155" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/core/dao/jpa/JpaTrainRouteDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+        <state relative-caret-position="323">
+          <caret line="29" column="50" selection-start-line="29" selection-start-column="50" selection-end-line="29" selection-end-column="50" />
           <folding />
         </state>
       </provider>
