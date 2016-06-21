@@ -6,5 +6,7 @@
 <body>
     <h1>Это index.jsp</h1>
     <a href="/sbb/admin">Перейти в админку</a> <br>
+
+    <a href="/sbb/testing">Тестирование</a>
 </body>
 </html>

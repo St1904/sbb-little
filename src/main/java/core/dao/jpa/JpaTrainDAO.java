@@ -14,7 +14,7 @@ public class JpaTrainDAO extends JpaGenericDAO<Train> implements TrainDAO {
     }
 
     public List<Train> findAll() {
-        return (List<Train>) entityManager.createQuery("select c from Train c").getResultList();
+        return entityManager.createQuery("select c from Train c", Train.class).getResultList();
     }
 
     public Train findByName(String name) {

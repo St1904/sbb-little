@@ -8,6 +8,7 @@ import core.dao.model.TrainCarriage;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 import java.util.List;
 
 public class JpaTrainCarriageDAO extends JpaGenericDAO<TrainCarriage> implements TrainCarriageDAO {
@@ -16,8 +17,8 @@ public class JpaTrainCarriageDAO extends JpaGenericDAO<TrainCarriage> implements
     }
 
     public List<Carriage> findByTrain(Train train) {
-        Query query = entityManager.createQuery("select c.carriage from TrainCarriage c where c.trainForCarriage = :train");
+        TypedQuery<Carriage> query = entityManager.createQuery("select c.carriage from TrainCarriage c where c.trainForCarriage = :train", Carriage.class);
         query.setParameter("train", train);
-        return (List<Carriage>) query.getResultList();
+        return query.getResultList();
     }
 }

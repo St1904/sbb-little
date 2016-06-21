@@ -4,14 +4,12 @@ import core.dao.api.DaoException;
 import core.dao.api.RouteDAO;
 import core.dao.api.TrainRouteDAO;
 import core.dao.api.WaypointDAO;
-import core.dao.model.Route;
-import core.dao.model.Train;
-import core.dao.model.TrainRoute;
-import core.dao.model.Waypoint;
+import core.dao.model.*;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -84,5 +82,28 @@ public class RouteServiceImpl implements RouteService {
 
     public Route findRouteById(long id) {
         return routeDAO.find(id);
+    }
+
+    public TrainRoute findTrainRouteById(long id) {
+        return trainRouteDAO.find(id);
+    }
+
+    public List<Route> routesBetweenStations(Station start, Station finish) {
+        List<Route> list = routeDAO.findBetweenStations(start, finish);
+        List<Route> routes = new ArrayList<Route>();
+        for (Route route : list) {
+            Waypoint w1 = new Waypoint(), w2 = new Waypoint();
+            for (Waypoint waypoint : route.getWaypoints()) {
+                if (waypoint.getStation().getId() == start.getId()) {
+                    w1 = waypoint;
+                } else if (waypoint.getStation().getId() == finish.getId()) {
+                    w2 = waypoint;
+                }
+            }
+            if (w1.getArrival() < w2.getArrival()) {
+                routes.add(route);
+            }
+        }
+        return routes;
     }
 }

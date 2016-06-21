@@ -68,4 +68,12 @@ public class TrainRoute extends BaseEntity {
     public void setTrainForRoute(Train trainForRoute) {
         this.trainForRoute = trainForRoute;
     }
+
+    public String toString() {
+        return "id=" + this.getId() +
+                " train_id=" + this.getTrainForRoute().getId() +
+                " route_id=" + this.getRouteForTrain().getId() +
+                " date=" + this.getDate() +
+                " time=" + this.getTime();
+    }
 }

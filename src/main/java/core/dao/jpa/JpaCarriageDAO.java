@@ -13,6 +13,6 @@ public class JpaCarriageDAO extends JpaGenericDAO<Carriage> implements CarriageD
     }
 
     public List<Carriage> findAll() {
-        return (List<Carriage>) entityManager.createQuery("select c from Carriage c").getResultList();
+        return entityManager.createQuery("select c from Carriage c", Carriage.class).getResultList();
     }
 }
