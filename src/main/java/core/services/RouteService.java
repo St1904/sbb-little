@@ -18,4 +18,5 @@ public interface RouteService {
     List<Route> routesBetweenStations(Station start, Station end);
     List<TrainRoute> findByRoute(Route route);
     List<TrainRoute> trainRoutesBetweenDates(List<TrainRoute> trainRouteList, Date start, Date finish);
+    List<TrainRoute> findByStation(Station station);
 }

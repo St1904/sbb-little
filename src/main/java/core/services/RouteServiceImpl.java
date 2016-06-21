@@ -126,4 +126,8 @@ public class RouteServiceImpl implements RouteService {
         }
         return result;
     }
+
+    public List<TrainRoute> findByStation(Station station) {
+        return trainRouteDAO.findByStation(station);
+    }
 }
