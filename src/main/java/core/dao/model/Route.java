@@ -62,7 +62,6 @@ public class Route extends BaseEntity {
         return "Route{" +
                 "name='" + name + '\'' +
                 ", pricePerMinute=" + pricePerMinute +
-                ", waypoints=" + waypoints +
                 ", trainRoutes=" + trainRoutes +
                 '}';
     }

@@ -88,4 +88,8 @@ public class TrainServiceImpl implements TrainService {
     public List<Carriage> showCarriages() {
         return carriageDAO.findAll();
     }
+
+    public Train findTrainById(long id) {
+        return trainDAO.find(id);
+    }
 }
