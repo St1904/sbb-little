@@ -106,4 +106,24 @@ public class RouteServiceImpl implements RouteService {
         }
         return routes;
     }
+
+    public List<TrainRoute> findByRoute(Route route) {
+        return trainRouteDAO.findByRoute(route);
+    }
+
+    public List<TrainRoute> trainRoutesBetweenDates(List<TrainRoute> trainRouteList, Date start, Date finish) {
+        List<TrainRoute> result = new ArrayList<TrainRoute>();
+        for (TrainRoute trainRoute : trainRouteList) {
+            Date date = trainRoute.getDate();
+            Date time = trainRoute.getTime();
+            Date full = new Date(date.getTime());
+            full.setHours(time.getHours());
+            full.setMinutes(time.getMinutes());
+            full.setSeconds(time.getSeconds());
+            if (full.getTime() >= start.getTime() && full.getTime() <= finish.getTime()) {
+                result.add(trainRoute);
+            }
+        }
+        return result;
+    }
 }
