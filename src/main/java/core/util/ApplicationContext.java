@@ -62,6 +62,12 @@ public class ApplicationContext {
     private TrainRouteDAO getTrainRouteDAO() {
         return new JpaTrainRouteDAO(getEntityManager());
     }
+    private TicketDAO getTicketDAO() {
+        return new JpaTicketDAO(getEntityManager());
+    }
+    private PassengerDAO getPassengerDAO() {
+        return new JpaPassengerDAO(getEntityManager());
+    }
 
 
     public StationService getStationService() {
@@ -72,5 +78,8 @@ public class ApplicationContext {
     }
     public RouteService getRouteService() {
         return new RouteServiceImpl(getEntityManager(), getWaypointDAO(), getRouteDAO(), getTrainRouteDAO());
+    }
+    public TicketService getTicketService() {
+        return new TicketServiceImpl(getEntityManager(), getTrainRouteDAO(), getTicketDAO(), getPassengerDAO(), getWaypointDAO(), getCarriageDAO());
     }
 }

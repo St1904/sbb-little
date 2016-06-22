@@ -15,8 +15,11 @@ public interface RouteService {
     void setTrainOnRoute(Train train, Route route, Date date, Date time, BigDecimal price);
     Route findRouteById(long id);
     TrainRoute findTrainRouteById(long id);
-    List<Route> routesBetweenStations(Station start, Station end);
+//    List<Route> routesBetweenStations(Station start, Station end);
     List<TrainRoute> findByRoute(Route route);
-    List<TrainRoute> trainRoutesBetweenDates(List<TrainRoute> trainRouteList, Date start, Date finish);
+
     List<TrainRoute> findByStation(Station station);
+
+    List<TimeTable> findScheduleForStation(Station station);
+    List<TimeTable> timeTablesBetweenDates(List<TimeTable> timeTableList, Station to, Date start, Date finish);
 }

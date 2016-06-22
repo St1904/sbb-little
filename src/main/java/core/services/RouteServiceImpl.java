@@ -88,6 +88,59 @@ public class RouteServiceImpl implements RouteService {
         return trainRouteDAO.find(id);
     }
 
+    public List<TrainRoute> findByRoute(Route route) {
+        return trainRouteDAO.findByRoute(route);
+    }
+
+
+    public List<TrainRoute> findByStation(Station station) {
+        return trainRouteDAO.findByStation(station);
+    }
+
+    public List<TimeTable> findScheduleForStation(Station station) {
+        List<TrainRoute> trainRouteList = trainRouteDAO.findByStation(station);
+        Waypoint waypoint;
+        List<TimeTable> result = new ArrayList<TimeTable>();
+        for (TrainRoute trainRoute : trainRouteList) {
+            waypoint = waypointDAO.findByAll(trainRoute, station);
+            result.add(new TimeTable(station, trainRoute, waypoint));
+        }
+        return result;
+    }
+
+    public List<TimeTable> timeTablesBetweenDates(List<TimeTable> timeTableList, Station to, Date start, Date finish) {
+        List<TimeTable> result = new ArrayList<TimeTable>();
+        for (TimeTable timeTable : timeTableList) {
+            TrainRoute trainRoute = timeTable.getTrainRoute();
+            Waypoint finishWaypoint = waypointDAO.findByAll(trainRoute, to);
+            if (trainRoute.getRouteForTrain().getWaypoints().contains(finishWaypoint)
+                    && finishWaypoint.getArrival() > timeTable.getWaypoint().getArrival()
+                    && timeTable.getTimeToGo().getTime() >= start.getTime()
+                    && timeTable.getTimeToGo().getTime() <= finish.getTime()) {
+                result.add(timeTable);
+            }
+        }
+        return result;
+    }
+
+    //not useful
+    /*public List<TrainRoute> trainRoutesBetweenDates(List<TrainRoute> trainRouteList, Date start, Date finish) {
+        List<TrainRoute> result = new ArrayList<TrainRoute>();
+        for (TrainRoute trainRoute : trainRouteList) {
+            Date date = trainRoute.getDate();
+            Date time = trainRoute.getTime();
+            Date full = new Date(date.getTime());
+            full.setHours(time.getHours());
+            full.setMinutes(time.getMinutes());
+            full.setSeconds(time.getSeconds());
+            if (full.getTime() >= start.getTime() && full.getTime() <= finish.getTime()) {
+                result.add(trainRoute);
+            }
+        }
+        return result;
+    }*/
+
+    /*
     public List<Route> routesBetweenStations(Station start, Station finish) {
         List<Route> list = routeDAO.findBetweenStations(start, finish);
         List<Route> routes = new ArrayList<Route>();
@@ -106,28 +159,6 @@ public class RouteServiceImpl implements RouteService {
         }
         return routes;
     }
+*/
 
-    public List<TrainRoute> findByRoute(Route route) {
-        return trainRouteDAO.findByRoute(route);
-    }
-
-    public List<TrainRoute> trainRoutesBetweenDates(List<TrainRoute> trainRouteList, Date start, Date finish) {
-        List<TrainRoute> result = new ArrayList<TrainRoute>();
-        for (TrainRoute trainRoute : trainRouteList) {
-            Date date = trainRoute.getDate();
-            Date time = trainRoute.getTime();
-            Date full = new Date(date.getTime());
-            full.setHours(time.getHours());
-            full.setMinutes(time.getMinutes());
-            full.setSeconds(time.getSeconds());
-            if (full.getTime() >= start.getTime() && full.getTime() <= finish.getTime()) {
-                result.add(trainRoute);
-            }
-        }
-        return result;
-    }
-
-    public List<TrainRoute> findByStation(Station station) {
-        return trainRouteDAO.findByStation(station);
-    }
 }

@@ -2,6 +2,7 @@ package core.dao.model;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.util.Set;
 
 @Entity
 @Table(name = "Carriage")
@@ -14,6 +15,9 @@ public class Carriage extends BaseEntity {
 
     @Column(name = "price", nullable = false)
     private BigDecimal priceForCarriage;
+
+    @OneToMany(mappedBy = "carriage")
+    private Set<TrainCarriage> trainCarriages;
 
     public Carriage() {}
 
