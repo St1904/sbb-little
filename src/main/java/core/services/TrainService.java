@@ -8,15 +8,15 @@ import java.util.List;
 import java.util.Map;
 
 public interface TrainService {
-
     void addCarriage(String type, int capacity, BigDecimal price);
     void addTrain(String name, Map<Carriage, Integer> map);
+
+    Train findTrainById(long id);
+    Train findTrainByName(String name);
 
     List<Train> showTrains();
 
     Carriage findCarriageById(long id);
-    Train findTrainById(long id);
-    Train findTrainByName(String name);
 
     List<Carriage> findCarriagesByTrain(Train train);
     List<Carriage> showCarriages();

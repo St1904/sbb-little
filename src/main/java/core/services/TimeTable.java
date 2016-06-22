@@ -58,4 +58,15 @@ public class TimeTable {
     public Date getTimeToGo() {
         return timeToGo;
     }
+
+    public String toString() {
+        return "TimeTable : \n"
+                + "station.name : " + station.getName() + "\n"
+                + " trainRoute.id : " + trainRoute.getId() + "\n"
+                + " route.name : " + trainRoute.getRouteForTrain().getName() + "\n"
+                + " train.name : " + trainRoute.getTrainForRoute().getName() + "\n"
+                + " timeArrival : " + timeArrival + "\n"
+                + " timeStay : " + timeStay + "\n"
+                + " timeToGo : " + timeToGo;
+    }
 }

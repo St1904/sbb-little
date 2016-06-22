@@ -15,8 +15,6 @@ public class TrainRoute extends BaseEntity {
     @Column(name = "time_start", nullable = false)
     private Date time;
 
-    private Date fullDate;
-
     @Column(name = "price_coef", nullable = false)
     private BigDecimal priceCoef;
 
@@ -72,10 +70,10 @@ public class TrainRoute extends BaseEntity {
     }
 
     public Date getFullDate() {
-        Date result = this.date;
-        result.setHours(this.time.getHours());
-        result.setMinutes(this.time.getMinutes());
-        result.setSeconds(this.time.getSeconds());
+        Date result = new Date(date.getTime());
+        result.setHours(time.getHours());
+        result.setMinutes(time.getMinutes());
+        result.setSeconds(time.getSeconds());
         return result;
     }
 

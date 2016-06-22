@@ -16,7 +16,7 @@ public class JpaWaypointDAO extends JpaGenericDAO<Waypoint> implements WaypointD
 
     public Waypoint findByAll(TrainRoute trainRoute, Station station) {
         TypedQuery<Waypoint> query = entityManager.createQuery(
-                "select w from Waypoint w inner join w.routeForWaypoint r where r.trainRoutes = :trainRoute and w.station = :station"
+                "select w from Waypoint w inner join w.routeForWaypoint r where :trainRoute member of r.trainRoutes and w.station = :station"
                 , Waypoint.class)
                 .setParameter("trainRoute", trainRoute)
                 .setParameter("station", station);

@@ -25,7 +25,7 @@ public class JpaTrainRouteDAO extends JpaGenericDAO<TrainRoute> implements Train
 
     public List<TrainRoute> findByStation(Station station) {
         TypedQuery<TrainRoute> query = entityManager.createQuery(
-                "select tr from TrainRoute tr inner join tr.routeForTrain r inner join r.waypoints ww where ww.station = :station and ww.stayCount <> 0"
+                "select tr from TrainRoute tr join tr.routeForTrain r join r.waypoints ww where ww.station = :station"
                 , TrainRoute.class)
                 .setParameter("station", station);
         return query.getResultList();

@@ -17,8 +17,9 @@ public class JpaTrainCarriageDAO extends JpaGenericDAO<TrainCarriage> implements
     }
 
     public List<Carriage> findByTrain(Train train) {
-        TypedQuery<Carriage> query = entityManager.createQuery("select c.carriage from TrainCarriage c where c.trainForCarriage = :train", Carriage.class);
-        query.setParameter("train", train);
+        TypedQuery<Carriage> query = entityManager.createQuery(
+                "select c.carriage from TrainCarriage c where c.trainForCarriage = :train"
+                , Carriage.class).setParameter("train", train);
         return query.getResultList();
     }
 }
